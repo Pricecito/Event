@@ -8,25 +8,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Builder;
+import lombok.Data;
 
-import java.io.Serializable;
-import lombok.*;
-
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-@Builder
 @Entity
-@Table(name = "persmissions")
-public class Persmissions {
+@Builder
+@Table(name = "categorias")
+public class Categories {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-
-    @Column(unique = true, nullable = false, name = "nombre")
-    @Enumerated(EnumType.STRING)
-    private PermissionEnum permissionEnum;
-
     
+    @Column(name = "nombre", unique = true)
+    @Enumerated(EnumType.STRING)
+    private CategoriesEnum categoriaEnum;
+
 
 }
