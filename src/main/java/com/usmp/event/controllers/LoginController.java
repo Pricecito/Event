@@ -1,6 +1,7 @@
 package com.usmp.event.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,13 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import com.usmp.event.persistence.models.Users;
 import com.usmp.event.service.UserService.UserService;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
 @Controller
 @RequestMapping("/login")
 public class LoginController {
     @Autowired
+    @Qualifier("loginService")
     private UserService service;
 
     @GetMapping
@@ -26,8 +25,10 @@ public class LoginController {
 
     @PostMapping
     public String searchUser(Users user) {
-        
-        return entity;
+        if (service.findEmail(user.getEmail()) && service.findPassword(user.getPassword())) {
+            return "redirect: /home";
+        }
+        return "redirect: /error";
     }
 
 }
