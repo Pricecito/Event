@@ -1,4 +1,4 @@
-package com.usmp.event.service;
+package com.usmp.event.service.UserService;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 import com.usmp.event.persistence.models.Users;
 import com.usmp.event.persistence.repository.UsersRepository;
 
-@Service
-public class UserService {
+@Service ("crudService")
+public class UserServiceCRUD {
     @Autowired
     private UsersRepository repository;
 
