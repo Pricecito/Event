@@ -1,6 +1,7 @@
 package com.usmp.event.persistence.models;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.Period;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +17,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 import lombok.*;
@@ -39,7 +41,7 @@ public class Users {
     private String dni;
 
     @Column(nullable = false)
-    private LocalDate fechaNacimiento;
+    private String fechaNacimiento;
 
     private Integer edad;
 
@@ -47,13 +49,14 @@ public class Users {
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Roles> roles = new HashSet<>();
 
-    public Integer calcularEdad() throws Exception {
+    @PrePersist
+    public void calcularEdad() throws Exception {
         LocalDate actual = LocalDate.now();
-        int edad = Period.between(this.fechaNacimiento, actual).getYears();
+        int edad = Period.between(LocalDate.parse(this.fechaNacimiento), actual).getYears();
         if (edad < 18) {
             throw new Exception();
         } else
-            return edad;
+            this.edad=edad;
 
     }
 

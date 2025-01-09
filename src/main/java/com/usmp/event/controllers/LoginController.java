@@ -14,7 +14,6 @@ import com.usmp.event.service.UserService.UserService;
 @RequestMapping("/login")
 public class LoginController {
     @Autowired
-    @Qualifier("loginService")
     private UserService service;
 
     @GetMapping

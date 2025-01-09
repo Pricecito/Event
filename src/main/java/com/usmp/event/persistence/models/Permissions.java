@@ -9,7 +9,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.io.Serializable;
 import lombok.*;
 
 @AllArgsConstructor
@@ -17,8 +16,8 @@ import lombok.*;
 @Data
 @Builder
 @Entity
-@Table(name = "persmissions")
-public class Persmissions {
+@Table(name = "permissions")
+public class Permissions {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -26,7 +25,5 @@ public class Persmissions {
     @Column(unique = true, nullable = false, name = "nombre")
     @Enumerated(EnumType.STRING)
     private PermissionEnum permissionEnum;
-
-    
 
 }
