@@ -1,7 +1,6 @@
 package com.usmp.event.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,10 +23,7 @@ public class LoginController {
 
     @PostMapping
     public String searchUser(Users user) {
-        if (service.findEmail(user.getEmail()) && service.findPassword(user.getPassword())) {
-            return "redirect: /home";
-        }
-        return "redirect: /error";
+        return service.findEmailAndPassword(user)? "redirect:/home":"redirect:/error";
     }
 
 }

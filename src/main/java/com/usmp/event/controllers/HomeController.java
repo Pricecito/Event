@@ -16,26 +16,5 @@ public class HomeController {
 
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> find() {
-        try {
-            // TODO Implement Your Logic To Get Data From Service Layer Or Directly From
-            // Repository Layer
-            return new ResponseEntity<>("GetOne Result", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @PostMapping()
-    public ResponseEntity<?> create() {
-        try {
-            // TODO Implement Your Logic To Save Data And Return Result Through
-            // ResponseEntity
-            return new ResponseEntity<>("Create Result", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 
 }

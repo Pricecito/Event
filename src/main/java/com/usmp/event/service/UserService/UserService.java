@@ -32,21 +32,13 @@ public class UserService {
         repository.deleteById(id);
     }
 
-    public boolean findEmail(String email) {
+    public boolean findEmailAndPassword(Users user) {
         for (var u : repository.findAll()) {
-            if (u.getEmail().equals(email))
-                return true;
+            if (u.getEmail().equals(user.getEmail()))
+                if (u.getPassword().equals(user.getPassword()))
+                    return true;
         }
-        throw new NullPointerException();
-
-    }
-
-    public boolean findPassword(String password) {
-        for (var u : repository.findAll()) {
-            if (u.getPassword().equals(password))
-                return true;
-        }
-        throw new NullPointerException();
+        return false;
 
     }
 
