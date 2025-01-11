@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - USMP</title>
+  </head>
+  <body>
+    <div class="registro-container">
+      <img
+        src="https://www.usmp.edu.pe/sites/default/files/2022-10/logo-usmp.png"
+        alt="Logo USMP"
+        class="logo"
+      />
+      <h1>Registro de Usuario</h1>
+      <form action="#" method="post">
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="dni">DNI:</label>
+        <input
+          type="text"
+          id="dni"
+          name="dni"
+          pattern="\d{8}"
+          title="Ingrese un DNI válido de 8 dígitos"
+          required
+        />
+
+        <label for="fechaNacimiento">Fecha de nacimiento:</label>
+        <input
+          type="date"
+          id="fechaNacimiento"
+          name="fechaNacimiento"
+          required
+        />
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="0" max="120" required />
+
+        <button type="submit">Registrarse</button>
+      </form>
+      <div class="login-link">
+        <a href="#">¿Ya tienes una cuenta? Inicia sesión</a>
+      </div>
+    </div>
+  </body>
+</html>
