@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/confirmation/messageStyle.css}" />
+    <title>¡Registro Exitoso! - USMP</title>
+  </head>
+  <body>
+    <div class="felicitacion-container">
+      <img
+        th:src="@{https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX5snUSx4YLn3_pnxiFZU9nPMfyHvoOIb3rg&s}"
+        alt="Logo USMP"
+        class="logo"
+      />
+      <img
+        th:src="@{https://i.pinimg.com/736x/39/ed/3d/39ed3d2efaf3f8618bbcf8c2079fe53b.jpg}"
+        alt="Confeti de celebración"
+        class="confetti"
+      />
+      <h1>¡Felicidades!</h1>
+      <p>
+        Tu registro en el centro de eventos USMP ha sido exitoso. Estamos
+        encantados de darte la bienvenida a nuestra comunidad académica.
+      </p>
+      <p>
+        Ahora puedes acceder a todos los servicios y recursos que la USMP Event
+        tiene para ofrecerte. ¡Esperamos que tengas una experiencia
+        universitaria enriquecedora y llena de éxitos!
+      </p>
+      <a th:href="@{/home}" class="boton-inicio">Ir a la página de inicio</a>
+    </div>
+  </body>
+</html>

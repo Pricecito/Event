@@ -1,12 +1,15 @@
-package com.usmp.event.service.UserService;
+package com.usmp.event.service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.usmp.event.persistence.models.Roles;
 import com.usmp.event.persistence.models.Users;
 import com.usmp.event.persistence.repository.UsersRepository;
 
@@ -14,6 +17,8 @@ import com.usmp.event.persistence.repository.UsersRepository;
 public class UserService {
     @Autowired
     private UsersRepository repository;
+    @Autowired
+    private RolService rol_Service;
 
     public List<Users> findAllUsers() {
         return repository.findAll();
@@ -24,6 +29,9 @@ public class UserService {
     }
 
     public Users saveOrUpdateUser(Users user) {
+        List<Roles> rol = rol_Service.findAllRoles().stream().filter(x -> x.getRolEnum().name().equals("USUARIO"))
+                .toList();
+        user.setRoles(new HashSet<>(rol));
         repository.save(user);
         return user;
     }
@@ -40,6 +48,10 @@ public class UserService {
         }
         return false;
 
+    }
+
+    public void asignarRolUser(Users user) {
+        user.setRoles(Set.of());
     }
 
 }

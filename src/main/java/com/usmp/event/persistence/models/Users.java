@@ -47,7 +47,7 @@ public class Users {
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
-    private Set<Roles> roles = new HashSet<>();
+    private Set<Roles> roles;
 
     @PrePersist
     public void calcularEdad() throws Exception {

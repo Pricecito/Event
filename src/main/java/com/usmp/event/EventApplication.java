@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.usmp.event.persistence.models.Roles;
 import com.usmp.event.persistence.models.Users;
-import com.usmp.event.service.UserService.UserService;
+import com.usmp.event.service.UserService;
 
 @SpringBootApplication
 public class EventApplication {
