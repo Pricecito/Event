@@ -8,7 +8,7 @@
     <title>Centro de Eventos - USMP</title>
   </head>
   <body>
-    <header th:replace="/common/header :: header"></header>
+    <header th:replace="~{/common/header :: header}"></header>
     <main class="main-content">
       <section class="search-section">
         <h2 class="section-title">Encuentra tu próximo evento</h2>
@@ -104,6 +104,6 @@
         </div>
       </section>
     </main>
-    <footer th:replace="/common/footer :: footer"></footer>
+    <footer th:replace="~{/common/footer :: footer}"></footer>
   </body>
 </html>
