@@ -1,6 +1,7 @@
 package com.usmp.event.controllers;
 
 import java.lang.ProcessBuilder.Redirect;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,8 +28,9 @@ public class LoginController {
 
     @PostMapping
     public String searchUser(Users user, HttpSession session) {
-        if (service.findEmailAndPassword(user)) {
-            session.setAttribute("login", user);
+        var loger = service.findEmailAndPassword(user);
+        if (Objects.nonNull(loger)) {
+            session.setAttribute("login", loger);
             return "redirect:/home";
         } else {
             return "redirect:/error";

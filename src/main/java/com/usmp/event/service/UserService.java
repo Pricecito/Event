@@ -40,18 +40,16 @@ public class UserService {
         repository.deleteById(id);
     }
 
-    public boolean findEmailAndPassword(Users user) {
+    public Users findEmailAndPassword(Users user) {
         for (var u : repository.findAll()) {
             if (u.getEmail().equals(user.getEmail()))
                 if (u.getPassword().equals(user.getPassword()))
-                    return true;
+                    return u;
         }
-        return false;
+        return null;
 
     }
 
-    public void asignarRolUser(Users user) {
-        user.setRoles(Set.of());
-    }
+    
 
 }

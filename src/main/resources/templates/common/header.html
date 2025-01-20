@@ -23,6 +23,7 @@
         </div>
 
         <div class="auth-buttons" th:unless="${userSession==null}">
+          <h3 th:text="'Bienvenido '+${userSession.username}"></h3>
           <a th:href="@{/login}" class="auth-button login">USER REGISTRADO </a>
           <a th:href="@{/registro}" class="auth-button register">Registrarse</a>
         </div>
