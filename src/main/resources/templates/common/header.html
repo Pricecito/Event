@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centro de Eventos - USMP</title>
+  </head>
+  <body>
+    <header class="header" th:fragment="header">
+      <div class="header-content">
+        <img
+          th:src="@{https://filialsur.usmp.edu.pe/wp-content/uploads/2023/03/cropped-logo_USMP.webp}"
+          alt="Logo USMP"
+          class="logo"
+        />
+        <h1 class="title">Centro de Eventos USMP</h1>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link">Inicio</a></li>
+          <li><a href="#" class="nav-link">Eventos</a></li>
+          <li><a href="#" class="nav-link">Calendario</a></li>
+          <li><a href="#" class="nav-link">Contacto</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a href="#" class="auth-button login">Iniciar sesión</a>
+          <a href="#" class="auth-button register">Registrarse</a>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>

@@ -14,11 +14,7 @@
         class="logo"
       />
       <h1>Registro de Usuario</h1>
-      <form
-        th:object="${user}"
-        th:action="@{/registro/confirmation}"
-        method="get"
-      >
+      <form th:object="${user}" th:action="@{/registro}" method="post">
         <label for="username">Nombre de usuario:</label>
         <input
           type="text"

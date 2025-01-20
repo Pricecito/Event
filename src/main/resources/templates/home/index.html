@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/header/style.css}" />
+    <title>Centro de Eventos - USMP</title>
+  </head>
+  <body>
+    <header th:replace="/common/header :: header">
+      <img
+        th:src="@{https://filialsur.usmp.edu.pe/wp-content/uploads/2023/03/cropped-logo_USMP.webp}"
+        alt="Logo USMP"
+        class="logo"
+      />
+      <h1>Centro de Eventos USMP</h1>
+    </header>
+    <footer>
+      <p>&copy; 2023 Centro de Eventos USMP. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>
