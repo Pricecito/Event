@@ -1,0 +1,64 @@
+/* Estilos existentes */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.navbar {
+  background-color: #9b0c23;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.auth-buttons .btn {
+  transition: all 0.3s ease;
+}
+
+.section-title {
+  color: #c8102e;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background-color: #c8102e;
+  border-color: #c8102e;
+}
+
+.btn-primary:hover {
+  background-color: #9b0c23;
+  border-color: #9b0c23;
+}
+
+.footer {
+  margin-top: 3rem;
+}
+
+/* Estilos para la página de contacto */
+.contact-section {
+  background-color: #f8f9fa;
+}
+
+.contact-section .card {
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section .form-label {
+  font-weight: bold;
+}
+
+.contact-section .btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+}
