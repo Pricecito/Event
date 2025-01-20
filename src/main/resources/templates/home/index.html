@@ -3,20 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/home/style.css}" />
     <link rel="stylesheet" th:href="@{/css/header/style.css}" />
     <title>Centro de Eventos - USMP</title>
   </head>
   <body>
-    <header th:replace="/common/header :: header">
-      <img
-        th:src="@{https://filialsur.usmp.edu.pe/wp-content/uploads/2023/03/cropped-logo_USMP.webp}"
-        alt="Logo USMP"
-        class="logo"
-      />
-      <h1>Centro de Eventos USMP</h1>
-    </header>
-    <footer>
-      <p>&copy; 2023 Centro de Eventos USMP. Todos los derechos reservados.</p>
-    </footer>
+    <header th:replace="/common/header :: header"></header>
+    <main class="main-content">
+      <section class="search-section">
+        <h2 class="section-title">Encuentra tu próximo evento</h2>
+        <form class="search-form">
+          <input
+            type="text"
+            placeholder="Buscar eventos..."
+            class="search-input"
+          />
+          <button type="submit" class="search-button">Buscar</button>
+        </form>
+      </section>
+
+      <section class="featured-events">
+        <h2 class="section-title">Próximos Eventos Destacados</h2>
+        <div class="events-grid">
+          <article class="event-card">
+            <img
+              src="/placeholder.svg?height=200&width=300"
+              alt="Conferencia de Innovación"
+              class="event-image"
+            />
+            <div class="event-details">
+              <h3 class="event-title">NOMBRE DEL EVENTO</h3>
+              <p class="event-date">15 de Julio, 2023</p>
+              <p class="event-time">10:00 AM - 2:00 PM</p>
+              <p class="event-location">Auditorio Principal</p>
+              <a href="#" class="event-link">Más información</a>
+            </div>
+          </article>
+          <article class="event-card">
+            <img
+              src="/placeholder.svg?height=200&width=300"
+              alt="Feria de Empleo"
+              class="event-image"
+            />
+            <div class="event-details">
+              <h3 class="event-title">Feria de Empleo</h3>
+              <p class="event-date">22 de Julio, 2023</p>
+              <p class="event-time">9:00 AM - 5:00 PM</p>
+              <p class="event-location">Pabellón B</p>
+              <a href="#" class="event-link">Más información</a>
+            </div>
+          </article>
+          <article class="event-card">
+            <img
+              src="/placeholder.svg?height=200&width=300"
+              alt="Seminario de Liderazgo"
+              class="event-image"
+            />
+            <div class="event-details">
+              <h3 class="event-title">Seminario de Liderazgo</h3>
+              <p class="event-date">5 de Agosto, 2023</p>
+              <p class="event-time">3:00 PM - 7:00 PM</p>
+              <p class="event-location">Sala de Conferencias</p>
+              <a href="#" class="event-link">Más información</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="features">
+        <h2 class="section-title">Por qué elegir nuestro Centro de Eventos</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3 class="feature-title">Espacios Versátiles</h3>
+            <p class="feature-description">
+              Contamos con una variedad de espacios adaptables para todo tipo de
+              eventos, desde conferencias hasta conciertos.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3 class="feature-title">Tecnología de Punta</h3>
+            <p class="feature-description">
+              Ofrecemos equipos audiovisuales y de conectividad de última
+              generación para garantizar el éxito de tu evento.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3 class="feature-title">Ubicación Céntrica</h3>
+            <p class="feature-description">
+              Nuestro centro está ubicado estratégicamente para facilitar el
+              acceso desde cualquier punto de la ciudad.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3 class="feature-title">Servicio Integral</h3>
+            <p class="feature-description">
+              Brindamos servicios completos de catering, decoración y
+              coordinación para hacer tu evento inolvidable.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer th:replace="/common/footer :: footer"></footer>
   </body>
 </html>

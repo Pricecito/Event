@@ -25,6 +25,7 @@ public class EventApplication {
 
 	CommandLineRunner init(UserService service) {
 		return args -> {
+			
 
 			Permissions crearEvento = Permissions.builder()
 					.permissionEnum(PermissionEnum.CREAR_EVENTO)

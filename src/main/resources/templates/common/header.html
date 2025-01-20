@@ -7,6 +7,7 @@
           th:src="@{https://filialsur.usmp.edu.pe/wp-content/uploads/2023/03/cropped-logo_USMP.webp}"
           alt="Logo USMP"
           class="logo"
+          style="max-width: 80px; height: auto; border-radius: 40%"
         />
         <h1 class="title">Centro de Eventos USMP</h1>
       </div>
@@ -23,9 +24,13 @@
         </div>
 
         <div class="auth-buttons" th:unless="${userSession==null}">
-          <h3 th:text="'Bienvenido '+${userSession.username}"></h3>
-          <a th:href="@{/login}" class="auth-button login">USER REGISTRADO </a>
-          <a th:href="@{/registro}" class="auth-button register">Registrarse</a>
+          <span
+            th:text="'Bienvenido '+ ${userSession.username.toUpperCase()}"
+          ></span>
+          <a th:href="@{/perfil}" class="auth-button login">Perfil</a>
+          <a th:href="@{/logout}" class="auth-button register"
+            >Cerrar Session</a
+          >
         </div>
       </nav>
     </header>
