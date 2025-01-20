@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Centro de Eventos - USMP</title>
-  </head>
   <body>
     <header class="header" th:fragment="header">
       <div class="header-content">
@@ -17,14 +12,19 @@
       </div>
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="#" class="nav-link">Inicio</a></li>
-          <li><a href="#" class="nav-link">Eventos</a></li>
-          <li><a href="#" class="nav-link">Calendario</a></li>
-          <li><a href="#" class="nav-link">Contacto</a></li>
+          <li><a th:href="@{/home}" class="nav-link">Inicio</a></li>
+          <li><a th:href="@{/events}" class="nav-link">Eventos</a></li>
+          <li><a th:href="@{/calendar}" class="nav-link">Calendario</a></li>
+          <li><a th:href="@{/contact}" class="nav-link">Contacto</a></li>
         </ul>
-        <div class="auth-buttons">
-          <a href="#" class="auth-button login">Iniciar sesión</a>
-          <a href="#" class="auth-button register">Registrarse</a>
+        <div class="auth-buttons" th:if="${userSession==null}">
+          <a th:href="@{/login}" class="auth-button login">Iniciar sesión</a>
+          <a th:href="@{/registro}" class="auth-button register">Registrarse</a>
+        </div>
+
+        <div class="auth-buttons" th:unless="${userSession==null}">
+          <a th:href="@{/login}" class="auth-button login">USER REGISTRADO </a>
+          <a th:href="@{/registro}" class="auth-button register">Registrarse</a>
         </div>
       </nav>
     </header>

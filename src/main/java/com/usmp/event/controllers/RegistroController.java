@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.usmp.event.persistence.models.Users;
 import com.usmp.event.service.UserService;
 
-import io.micrometer.core.ipc.http.HttpSender;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
