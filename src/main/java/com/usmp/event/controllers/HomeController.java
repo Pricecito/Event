@@ -11,7 +11,7 @@ import com.usmp.event.persistence.models.Users;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/")
 public class HomeController {
 
     @GetMapping

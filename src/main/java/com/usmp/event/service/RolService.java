@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.usmp.event.persistence.models.Roles;
-import com.usmp.event.persistence.repository.RolesRepository;
+import com.usmp.event.persistence.repository.IRolesRepository;
 
 @Service
 public class RolService {
 
     @Autowired
-    private RolesRepository repository;
+    private IRolesRepository repository;
 
     public List<Roles> findAllRoles() {
         return repository.findAll();
