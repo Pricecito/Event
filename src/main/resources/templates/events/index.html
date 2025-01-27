@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" layout:decorate="/layout/layout.html">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/events/style.css}" />
+    <title>Eventos - Centro de Eventos USMP</title>
+  </head>
+  <body>
+    <main layout:fragment="content">
+      <div class="container py-5">
+        <h1 class="text-center mb-5">Próximos Eventos</h1>
+
+        <div class="row mb-4">
+          <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Buscar eventos..."
+              />
+              <button class="btn btn-usmp" type="button">Buscar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lista de eventos -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- Evento 1 -->
+          <div class="col" th:if="${listEvent!=null}">
+            <div class="card h-100 event-card" th:each="event : ${listEvent}">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                class="card-img-top event-image"
+                alt="Conferencia de Innovación"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Conferencia de Innovación</h5>
+                <p class="card-text">
+                  Descubre las últimas tendencias en innovación y tecnología con
+                  expertos de la industria.
+                </p>
+                <p class="card-text">
+                  <small class="text-muted"
+                    >15 de Julio, 2023 | 10:00 AM - 2:00 PM</small
+                  >
+                </p>
+                <p class="card-text">
+                  <small class="text-muted">Auditorio Principal</small>
+                </p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-usmp">Más información</a>
+                <span class="badge badge-usmp float-end">Tecnología</span>
+              </div>
+            </div>
+          </div>
+          <div class="col" th:unless="${listEvent!=null}">LISTA VACIA</div>
+        </div>
+
+        <!-- Paginación -->
+        <nav aria-label="Navegación de páginas de eventos" class="mt-5">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
+                >Anterior</a
+              >
+            </li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Siguiente</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+
+    <!-- Footer (sin cambios) -->
+
+    <!-- Bootstrap JS local -->
+    <script th:src="@{lib/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>

@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-  <body>
-    <header class="header" th:fragment="header">
-      <div class="header-content">
-        <img
-          th:src="@{https://filialsur.usmp.edu.pe/wp-content/uploads/2023/03/cropped-logo_USMP.webp}"
-          alt="Logo USMP"
-          class="logo"
-          style="max-width: 80px; height: auto; border-radius: 40%"
-        />
-        <h1 class="title">Centro de Eventos USMP</h1>
+  <header class="header" th:fragment="header">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <img
+            th:src="@{https://filialsur.usmp.edu.pe/wp-content/uploads/2023/03/cropped-logo_USMP.webp}"
+            alt="Logo USMP"
+            class="logo img-fluid"
+          />
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <h1 class="title">Centro de Eventos USMP</h1>
+        </div>
       </div>
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a th:href="@{/}" class="nav-link">Inicio</a></li>
-          <li><a th:href="@{/events}" class="nav-link">Eventos</a></li>
-          <li><a th:href="@{/calendar}" class="nav-link">Calendario</a></li>
-          <li><a th:href="@{/contactus}" class="nav-link">Contacto</a></li>
-        </ul>
-        <div class="auth-buttons" th:if="${userSession==null}">
-          <a th:href="@{/login}" class="auth-button login">Iniciar sesión</a>
-          <a th:href="@{/registro}" class="auth-button register">Registrarse</a>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/events}">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/calendar}">Calendario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/contactus}">Contacto</a>
+            </li>
+          </ul>
+          <div class="auth-buttons">
+            <a th:href="@{/login}" class="btn btn-outline-light me-2"
+              >Iniciar sesión</a
+            >
+            <a th:href="@{/register}" class="btn btn-light">Registrarse</a>
+          </div>
         </div>
-
-        <div class="auth-buttons" th:unless="${userSession==null}">
-          <span
-            th:text="'Bienvenido '+ ${userSession.username.toUpperCase()}"
-          ></span>
-          <a th:href="@{/perfil}" class="auth-button login">Perfil</a>
-          <a th:href="@{/logout}" class="auth-button register"
-            >Cerrar Session</a
-          >
-        </div>
-      </nav>
-    </header>
-  </body>
+      </div>
+    </nav>
+  </header>
 </html>

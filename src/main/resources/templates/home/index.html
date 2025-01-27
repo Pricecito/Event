@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html
+  lang="es"
+  xmlns:th="http://www.thymeleaf.org"
+  layout:decorate="/layout/layout.html"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" th:href="@{/css/home/style.css}" />
-    <link rel="stylesheet" th:href="@{/css/header/style.css}" />
-    <link rel="stylesheet" th:href="@{/css/footer/style.css}" />
     <title>Centro de Eventos - USMP</title>
   </head>
   <body>
-    <header th:replace="~{/common/header :: header}"></header>
-    <main class="main-content">
+    <main class="main-content" layout:fragment="content">
       <section class="search-section">
         <h2 class="section-title">Encuentra tu próximo evento</h2>
         <form class="search-form">

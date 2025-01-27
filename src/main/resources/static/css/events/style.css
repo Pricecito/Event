@@ -1,0 +1,26 @@
+/* Estilos específicos para la página de eventos */
+.event-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.event-image {
+  height: 200px;
+  object-fit: cover;
+}
+.badge-usmp {
+  background-color: #c8102e;
+  color: white;
+}
+.btn-usmp {
+  background-color: #c8102e;
+  border-color: #c8102e;
+  color: white;
+}
+.btn-usmp:hover {
+  background-color: #9b0c23;
+  border-color: #9b0c23;
+  color: white;
+}
