@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="/layout/layout.html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <main layout:fragment="content">
+        <div class="profile-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-3 text-center">
+                        <img src="/placeholder.svg?height=150&width=150" alt="Foto de perfil" class="profile-image mb-3">
+                    </div>
+                    <div class="col-md-9">
+                        <h1>Juan Pérez</h1>
+                        <p class="lead">Estudiante de Ingeniería de Sistemas</p>
+                        <p><i class="bi bi-envelope"></i> juan.perez@usmp.pe</p>
+                        <button class="btn btn-usmp">Editar Perfil</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <ul class="nav nav-pills mb-4" id="profileTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="true">Información Personal</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="events-tab" data-bs-toggle="tab" data-bs-target="#events" type="button" role="tab" aria-controls="events" aria-selected="false">Mis Eventos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Configuración</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="profileTabsContent">
+                <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+                    <h3>Información Personal</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Nombre:</strong> Juan Pérez</p>
+                            <p><strong>Carrera:</strong> Ingeniería de Sistemas</p>
+                            <p><strong>Año de Ingreso:</strong> 2020</p>
+                            <p><strong>Fecha de Nacimiento:</strong> 15 de Mayo de 1999</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Correo Electrónico:</strong> juan.perez@usmp.pe</p>
+                            <p><strong>Teléfono:</strong> +51 987 654 321</p>
+                            <p><strong>Ciudad:</strong> Lima</p>
+                            <p><strong>País:</strong> Perú</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
+                    <h3>Mis Eventos</h3>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card h-100 event-card">
+                                <img src="/placeholder.svg?height=150&width=250" class="card-img-top" alt="Evento 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Conferencia de Innovación</h5>
+                                    <p class="card-text"><small class="text-muted">15 de Julio, 2023</small></p>
+                                    <a href="#" class="btn btn-sm btn-usmp">Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 event-card">
+                                <img src="/placeholder.svg?height=150&width=250" class="card-img-top" alt="Evento 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Feria de Empleo</h5>
+                                    <p class="card-text"><small class="text-muted">22 de Julio, 2023</small></p>
+                                    <a href="#" class="btn btn-sm btn-usmp">Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                    <h3>Configuración de la Cuenta</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="changePassword" class="form-label">Cambiar Contraseña</label>
+                            <input type="password" class="form-control" id="changePassword" placeholder="Nueva contraseña">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirmar Nueva Contraseña</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar nueva contraseña">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="emailNotifications">
+                            <label class="form-check-label" for="emailNotifications">Recibir notificaciones por correo electrónico</label>
+                        </div>
+                        <button type="submit" class="btn btn-usmp">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
