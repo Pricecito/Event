@@ -20,6 +20,8 @@ public class Feedback {
     @GeneratedValue(strategy=GenerationType.UUID)
     private UUID id;
 
+    @Min(value = 1)
+    @Max(value = 5)
     private Byte calification;
 
     private String comment;
